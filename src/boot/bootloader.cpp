@@ -5,6 +5,7 @@
 #include "lib/Qlib.h"
 #include "apps/menu.h"
 #include "os/os.h"
+
 int bootselect[3] = {0, 0, 0};           
 
 void bootMenu() {
@@ -20,13 +21,10 @@ void bootMenu() {
             selected = (selected + 1) % 3;
         } else if (btn == BUTTON_B) {
             if (selected == 0) {
-                //logMessage("Starting QezOS Standard Boot");
-                StandardBoot();
+                StandartBoot();
             } else if (selected == 1) {
-                //logMessage("Starting QezOS Advanced Options Boot");
                 AdvancedOptionsBoot();
             } else {
-                //logMessage("Starting QezOS Secure Boot");
                 SecureBoot();
             }
         }
