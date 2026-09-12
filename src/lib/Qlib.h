@@ -13,7 +13,7 @@ public:
     //void setColor(uint16_t color);
     //void setCursor(int x, int y);
     //void setTextColor(uint16_t color);
-    const char* apps[6] = {"None", "None", "None", "None", "None", "Back to Boot"};
+    const char* apps[4] = {"None", "None", "None", "Back to Boot"};
 };
 
 extern Q q;

@@ -1,12 +1,13 @@
 #include "os.h"
+#include <apps/menu.h>2
 #include <M5Unified.h>
 
 void StandardBoot() {
-    clear();
     M5.Lcd.setTextColor(TFT_WHITE);
     M5.Lcd.setCursor(20, 50);
     M5.Lcd.println("QezOS Standard Boot");
     q.wait(1000);
+
     runStandartBoot();
 }
 

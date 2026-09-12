@@ -3,6 +3,7 @@
 #include <drivers/buttons.h>
 #include "lib/Qlib.h"
 #include "menu.h"
+#include "utils/delevop.h"
 
 void runStandartMenu() {
 
@@ -20,19 +21,23 @@ void runStandartMenu() {
             selected = (selected + 1) % appCount; // переключение вниз
         }
         else if (btn == BUTTON_B) {
-            // Выбор приложения
             if (selected == 0) {
-                q.println("Launching App 1...");
-                // здесь код запуска App 1
+                q.print("Launching ");
+                q.apps[0];
+                delevop();
             } else if (selected == 1) {
-                q.println("Launching App 2...");
-                // здесь код запуска App 2
+                q.println("Launching ");
+                q.apps[1];
+                delevop();
             } else if (selected == 2) {
-                q.println("Launching App 3...");
-                // здесь код запуска App 3
+                q.println("Launching ");
+                q.apps[2];
+                delevop();
             } else if (selected == 3) {
-                q.println("Returning to Boot...");
-                return; // выходим из меню и возвращаемся в загрузчик
+                q.println("Exit to bootloader ");
+                q.apps[3];
+                delevop();
+                return;
             }
             delay(500);
         }
