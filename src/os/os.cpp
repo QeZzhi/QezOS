@@ -1,7 +1,7 @@
 #include "os.h"
 #include <apps/menu.h>2
 #include <M5Unified.h>
-#includ "/lib/Qlib.h"
+#include "/lib/Qlib.h"
 #include "drivers/display.h"
 
 void StandartBoot() {
