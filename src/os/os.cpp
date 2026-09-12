@@ -1,0 +1,31 @@
+#include "os.h"
+#include <M5Unified.h>
+
+void StandardBoot() {
+    clear();
+    M5.Lcd.setTextColor(TFT_WHITE);
+    M5.Lcd.setCursor(20, 50);
+    M5.Lcd.println("QezOS Standard Boot");
+    q.wait(1000);
+    runStandartBoot();
+}
+
+void AdvancedOptionsBoot() {
+    clear();
+    M5.Lcd.setTextColor(TFT_YELLOW);
+    M5.Lcd.setCursor(20, 50);
+    M5.Lcd.println("QezOS Advanced Options Boot");
+    while (true) {
+        q.wait(100);
+    }
+}
+
+void SecureBoot() {
+    clear();
+    M5.Lcd.setTextColor(TFT_GREEN);
+    M5.Lcd.setCursor(20, 50);
+    M5.Lcd.println("QezOS Secure Boot");
+    while(true) {
+        q.wait(100);
+    }
+}

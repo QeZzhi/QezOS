@@ -19,6 +19,25 @@ void drawBootMenu(const char* options[], int selected, int count) {
     }
 }
 
+void drawGenericMenu(const char* title, const char* options[], int selected, int count) {
+    M5.Lcd.fillScreen(TFT_BLACK);
+    M5.Lcd.setTextColor(TFT_WHITE);
+    M5.Lcd.setCursor(10, 20);
+    M5.Lcd.println(title);
+
+    for (int i = 0; i < count; i++) {
+        M5.Lcd.setCursor(20, 60 + i * 30);
+        if (i == selected) {
+            M5.Lcd.setTextColor(TFT_CYAN);
+            M5.Lcd.print("> ");
+        } else {
+            M5.Lcd.setTextColor(TFT_GRAY);
+            M5.Lcd.print("  ");
+        }
+        M5.Lcd.println(options[i]);
+    }
+}
+
 void clear() {
     M5.Lcd.fillScreen(TFT_BLACK);
 }

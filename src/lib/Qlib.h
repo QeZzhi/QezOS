@@ -1,7 +1,7 @@
 // QezOS/src/lib/Qlib.h
 #ifndef QLIB_H
 #define QLIB_H
-
+#include <string>
 #include <M5Unified.h>
 
 class Q {
@@ -13,6 +13,7 @@ public:
     //void setColor(uint16_t color);
     //void setCursor(int x, int y);
     //void setTextColor(uint16_t color);
+    const char* apps[6] = {"None", "None", "None", "None", "None", "Back to Boot"};
 };
 
 extern Q q;
