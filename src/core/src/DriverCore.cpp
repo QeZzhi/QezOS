@@ -31,4 +31,4 @@ void DriverCore::i2cWriteByte(int data) {
     i2c_write_byte_fast(data);
 }
 
-} // namespace core
+}

@@ -13,6 +13,6 @@ public:
     static void applyVolumeBuffer(int* buffer, int size, int volume);
 };
 
-} // namespace core
+}
 
 #endif

@@ -16,6 +16,6 @@ public:
     static void i2cWriteByte(int data);
 };
 
-} // namespace core
+}
 
 #endif

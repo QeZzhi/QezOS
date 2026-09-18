@@ -3,7 +3,6 @@
 #include "../drivers/display.h"
 #include "../drivers/buttons.h"
 #include "lib/Qlib.h"
-#include "apps/menu.h"
 #include "os/os.h"
 
 int bootselect[3] = {0, 0, 0};           

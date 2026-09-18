@@ -23,4 +23,4 @@ int MathCore::fixedDiv(int a, int b) {
     return fixed_div(a, b);
 }
 
-} // namespace core
+}

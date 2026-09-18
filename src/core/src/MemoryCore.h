@@ -13,6 +13,6 @@ public:
     static void* move(void* dest, const void* src, size_t n);
 };
 
-} // namespace core
+}
 
 #endif

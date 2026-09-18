@@ -16,6 +16,6 @@ public:
     static void fill(uint16_t color);
 };
 
-} // namespace core
+}
 
 #endif

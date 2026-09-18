@@ -19,4 +19,4 @@ void* MemoryCore::move(void* dest, const void* src, size_t n) {
     return memmove_fast(dest, src, n);
 }
 
-} // namespace core
+}

@@ -7,17 +7,17 @@
 vec3_dot:
 	l32i    a4, a2, 0
 	l32i    a5, a3, 0
-	mull    a4, a4, a5      /* a4 = a[0] * b[0] */
+	mull    a4, a4, a5 
 	mov.n   a6, a4
 	
 	l32i    a4, a2, 4	
 	l32i    a5, a3, 4
-	mull    a4, a4, a5      /* a4 = a[1] * b[1] */
+	mull    a4, a4, a5
 	add.n   a6, a6, a4
 	
 	l32i    a4, a2, 8
 	l32i    a5, a3, 8
-	mull    a4, a4, a5      /* a4 = a[2] * b[2] */
+	mull    a4, a4, a5
 	add.n   a6, a6, a4
 	
 	mov.n   a2, a6

@@ -31,4 +31,4 @@ void GraphicsCore::fill(uint16_t color) {
     fill_screen_fast(color);
 }
 
-} // namespace core
+}

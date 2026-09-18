@@ -27,4 +27,4 @@ void AudioCore::applyVolumeBuffer(int* buffer, int size, int volume) {
     apply_volume_buffer_fast(buffer, size, volume);
 }
 
-} // namespace core
+}

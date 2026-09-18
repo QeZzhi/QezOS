@@ -8,6 +8,6 @@ public:
     static void init();
 };
 
-} // namespace core
+}
 
 #endif

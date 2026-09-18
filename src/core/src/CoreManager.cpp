@@ -9,7 +9,6 @@ namespace core {
 
 void CoreManager::init() {
     GraphicsCore::init();
-    // Остальные инициализации по мере надобности
 }
 
-} // namespace core
+}
