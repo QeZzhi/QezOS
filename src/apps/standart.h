@@ -1,3 +1,14 @@
-#pragma once
+// ============================================================
+// standart.h — заголовок стандартного меню приложений QezOS
+// Здесь объявлена функция runStandartMenu.
+// standart.h — standard apps menu header for QezOS
+// Declares the runStandartMenu function.
+// ============================================================
 
-void runStandartMenu();
+#pragma once // Включить этот файл только один раз | Include this file only once
+
+// ------------------------------------------------------------
+// runStandartMenu — запустить стандартное меню приложений
+// Показывает список приложений (пока все — «None»)
+// ------------------------------------------------------------
+void runStandartMenu(); // Запуск стандартного меню | Run standard menu
