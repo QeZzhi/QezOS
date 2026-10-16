@@ -1,14 +1,25 @@
-#include "CoreManager.h"
-#include "GraphicsCore.h"
-#include "MathCore.h"
-#include "MemoryCore.h"
-#include "AudioCore.h"
-#include "DriverCore.h"
+// ============================================================
+// CoreManager.cpp — менеджер ядра QezOS
+// Инициализирует все модули ядра (графика, математика, память, ...).
+// CoreManager.cpp — QezOS core manager
+// Initializes all core modules (graphics, math, memory, ...).
+// ============================================================
 
-namespace core {
+#include "CoreManager.h"      // Объявление CoreManager | CoreManager declaration
+#include "GraphicsCore.h"     // GraphicsCore::init | GraphicsCore::init
+#include "MathCore.h"         // MathCore (пока не используется) | MathCore (unused yet)
+#include "MemoryCore.h"       // MemoryCore (пока не используется) | MemoryCore (unused yet)
+#include "AudioCore.h"        // AudioCore (пока не используется) | AudioCore (unused yet)
+#include "DriverCore.h"       // DriverCore (пока не используется) | DriverCore (unused yet)
 
-void CoreManager::init() {
-    GraphicsCore::init();
+namespace core { // Пространство имён core | Namespace core
+
+// ------------------------------------------------------------
+// CoreManager::init — инициализировать ядро QezOS
+// Сейчас инициализирует только графику
+// ------------------------------------------------------------
+void CoreManager::init() { // Инициализация ядра | Init core
+    GraphicsCore::init(); // Инициализируем графику | Initialize graphics
 }
 
-}
+} // Конец namespace core | End of namespace core
