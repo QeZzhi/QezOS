@@ -6,7 +6,7 @@
 
 **Дружелюбная прошивка для M5StickS3 (ESP32-S3), написанная на C++.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Platform: ESP32-S3](https://img.shields.io/badge/Platform-ESP32--S3-blue.svg)](https://www.espressif.com/)
 [![Language: C++](https://img.shields.io/badge/Language-C%2B%2B-lightgrey.svg)](https://isocpp.org/)
 
