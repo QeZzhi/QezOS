@@ -1,14 +1,14 @@
-<p align="center">
-  <img src="https://www.gitskins.com/api/section/wordmark?username=QeZzhi&theme=aurora&label=QezOS%20Torvalds" width="100%" alt="3D ASCII wordmark for Linus Torvalds" />
-</p>
+<div align="center">
+  <img src="banner.svg" alt="QezOS Banner" width="100%">
+</div>
 
 # QezOS 🚀
 
-**Дружелюбная прошивка для M5StickS3 (ESP32-S3), написанная на C++.**
+**Дружелюбная прошивка для M5StickS3 (ESP32-S3), написанная на C.**
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform: ESP32-S3](https://img.shields.io/badge/Platform-ESP32--S3-blue.svg)](https://www.espressif.com/)
-[![Language: C++](https://img.shields.io/badge/Language-C%2B%2B-lightgrey.svg)](https://isocpp.org/)
+[![Language: C](https://img.shields.io/badge/Language-C-lightgrey.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
 
 ---
 
@@ -18,7 +18,7 @@
 
 **Главная цель проекта:** Сделать системное программирование и работу с железом **красивыми и понятными для новичков**. Я хочу показать, что писать под микроконтроллеры — это не страшно, а интересно.
 
-Я использую C++ и легковесную библиотеку `M5Unified`, чтобы получить полный контроль над устройством, но при этом сохранить читаемость кода. В коде есть очень много комментариев, чтобы любой, кто знает базу C++, мог разобраться во всем без лишней головной боли.
+Я пишу ядро и логику на **чистом C**. Для работы с железом используется библиотека `M5Unified` (написанная на C++), но я изолировал её в отдельный слой абстракции — **`m5_shim`**. Это позволяет мне сохранять полный контроль над устройством, использовать всю мощь C и при этом не отказываться от удобной библиотеки. В коде есть очень много комментариев, чтобы любой, кто знает базу C, мог разобраться во всем без лишней головной боли.
 
 ## 💡 Для кого этот проект?
 - Для новичков, которые хотят понять, как устроены прошивки, но боятся сложного кода.
@@ -28,13 +28,13 @@
 - [x] **Базовая инициализация:** Настройка платы и запуск основных модулей.
 - [ ] **Понятный интерфейс:** Создание красивого и интуитивного выбора режимов загрузки (Boot modes) при старте.
 - [ ] **Максимально читаемый код:** Добавление подробных комментариев ко всем модулям.
-- [ ] **Минимум магии:** Отказ от скрытых тяжелых HAL в пользу прямого контроля.
+- [x] **Минимум магии:** Отказ от скрытых тяжелых HAL в пользу прямого контроля (достигнуто через изоляцию библиотеки в слой `m5_shim`).
 
 ## 🛠 Стек
 
-- **Язык:** C++
+- **Язык:** C
 - **Платформа:** ESP32-S3 (M5StickS3)
-- **Библиотека:** M5Unified
+- **Слой абстракции (Hardware):** C++ (M5Unified) — изолирован в `src/m5_shim`
 - **Сборка:** PlatformIO
 - **Фреймворк:** Arduino
 
@@ -42,12 +42,6 @@
 
 1. Установи [PlatformIO](https://platformio.org/).
 2. Клонируй репозиторий:
-   `git clone https://github.com/QeZzhi/QezOS.git`
-   `cd QezOS`
-3. Подключи M5StickS3 по USB.
-4. Запусти сборку и прошивку:
-   `pio run --target upload`
-
-## 👨‍💻 Автор
-
-**Эмир (QeZzhi)** — 14 лет. Системное программирование, C/C++. Пишу этот проект, чтобы доказать, что сложные вещи можно делать понятно.
+   ```bash
+   git clone https://github.com/QeZzhi/QezOS.git
+   cd QezOS
