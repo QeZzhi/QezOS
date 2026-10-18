@@ -1,6 +1,6 @@
-<div align="center">
-  <img src="banner.svg" alt="QezOS Banner" width="100%">
-</div>
+<p align="center">
+  <img src="https://www.gitskins.com/api/section/wordmark?username=QeZzhi&theme=aurora&label=QezOS%20Torvalds" width="100%" alt="3D ASCII wordmark for Linus Torvalds" />
+</p>
 
 # QezOS 🚀
 
