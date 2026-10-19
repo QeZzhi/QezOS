@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.gitskins.com/api/section/wordmark?username=QeZzhi&theme=aurora&label=QezOS%20Torvalds" width="100%" alt="3D ASCII wordmark for Linus Torvalds" />
+  <img src="https://www.gitskins.com/api/section/wordmark?username=QeZzhi&theme=aurora&label=QezOS&v=2" width="100%" alt="QezOS Wordmark" />
 </p>
 
 # QezOS 🚀
@@ -42,6 +42,12 @@
 
 1. Установи [PlatformIO](https://platformio.org/).
 2. Клонируй репозиторий:
-   ```bash
-   git clone https://github.com/QeZzhi/QezOS.git
-   cd QezOS
+   `git clone https://github.com/QeZzhi/QezOS.git`
+   `cd QezOS`
+3. Подключи M5StickS3 по USB.
+4. Запусти сборку и прошивку:
+   `pio run --target upload`
+
+## 👨‍💻 Автор
+
+**Эмир (QeZzhi)** — 14 лет. Системное программирование, C/C++, компиляторы. Пишу этот проект, чтобы доказать, что сложные вещи можно делать понятно.

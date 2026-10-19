@@ -26,15 +26,15 @@ void bootMenu(void) {
         else if (btn == BUTTON_B) {
             if (selected == 0) {
                 clear();
-                runStandartBoot();
+                StandartBoot();
             } 
             else if (selected == 1) {
                 clear();
-                runAdvancedOptionsMenu();
+                AdvancedOptionsBoot();
             } 
             else if (selected == 2) {
                 clear();
-                runSecureMenu();
+                SecureBoot();
             } 
             else if (selected == 3) {
                 clear();

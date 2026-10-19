@@ -30,7 +30,8 @@ void runStandartMenu(void) {
                 qz_lcd_set_text_color(TFT_YELLOW);
                 qz_lcd_set_cursor(10, 50);
                 qz_lcd_println("Launching app...");
-                qz_delay(1000);
+                
+                delay(1000);
                 clear();
                 printCentered("In development", TFT_YELLOW);
                 qz_delay(2000);

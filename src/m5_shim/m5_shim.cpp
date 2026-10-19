@@ -7,7 +7,7 @@ extern "C" uint32_t qz_millis(void) {
     return millis();
 }
 
-extern "C" void Delay(uint32_t ms) {
+extern "C" void qz_delay(uint32_t ms) {
     vTaskDelay(pdMS_TO_TICKS(ms));
 }
 
