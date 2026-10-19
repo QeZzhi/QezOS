@@ -5,10 +5,11 @@
 extern "C" {
 #endif
 
+// Объявление функции стандартного меню приложений
 void runStandartMenu(void);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif
+#endif // STANDART_H

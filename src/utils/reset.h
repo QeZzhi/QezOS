@@ -1,14 +1,15 @@
-// ============================================================
-// reset.h — заголовок сброса настроек QezOS
-// Здесь объявлена функция resetSettings.
-// reset.h — QezOS settings reset header
-// Declares the resetSettings function.
-// ============================================================
+#ifndef RESET_H
+#define RESET_H
 
-#pragma once // Включить этот файл только один раз | Include this file only once
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-// ------------------------------------------------------------
-// resetSettings — сбросить настройки QezOS
-// Показывает подтверждение, при согласии — перезагрузка
-// ------------------------------------------------------------
-void resetSettings(); // Сброс настроек | Reset settings
+// Объявление функции сброса настроек
+void resetSettings(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // RESET_H

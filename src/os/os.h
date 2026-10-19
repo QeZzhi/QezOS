@@ -1,22 +1,17 @@
-// ============================================================
-// os.h — заголовок логики загрузки QezOS
-// Объявляет три функции загрузки: Standard, Advanced, Secure.
-// os.h — QezOS boot logic header
-// Declares three boot functions: Standard, Advanced, Secure.
-// ============================================================
+#ifndef OS_H
+#define OS_H
 
-#pragma once // Включить этот файл только один раз | Include this file only once
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-// ------------------------------------------------------------
-// Три режима загрузки QezOS
-// Каждая функция показывает экран загрузки и запускает меню
-// ------------------------------------------------------------
+// Объявление функций режимов загрузки
+void StandartBoot(void);
+void AdvancedOptionsBoot(void);
+void SecureBoot(void);
 
-// Стандартная загрузка | Standard boot
-void StandartBoot();
+#ifdef __cplusplus
+}
+#endif
 
-// Расширенная загрузка | Advanced boot
-void AdvancedOptionsBoot();
-
-// Безопасная загрузка | Secure boot
-void SecureBoot();
+#endif // OS_H

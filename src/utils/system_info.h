@@ -1,14 +1,15 @@
-// ============================================================
-// system_info.h — заголовок информации о системе QezOS
-// Здесь объявлена функция showSystemInfo.
-// system_info.h — QezOS system info header
-// Declares the showSystemInfo function.
-// ============================================================
+#ifndef SYSTEM_INFO_H
+#define SYSTEM_INFO_H
 
-#pragma once // Включить этот файл только один раз | Include this file only once
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-// ------------------------------------------------------------
-// showSystemInfo — показать информацию о системе
-// Выводит версию, CPU, RAM, Flash, uptime
-// ------------------------------------------------------------
-void showSystemInfo(); // Информация о системе | System info
+// Объявление функции вывода системной информации
+void showSystemInfo(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // SYSTEM_INFO_H

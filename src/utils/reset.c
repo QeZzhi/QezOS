@@ -23,18 +23,15 @@ void resetSettings() {
         int btn = getButtonPress();
         
         if (btn == BUTTON_A) {
-            // Подтверждение
             clear();
             qz_lcd_set_text_color(TFT_GREEN);
             qz_lcd_set_cursor(10, 80);
             qz_lcd_println("Resetting");
             delay(1000);
             
-            // Перезагрузка
             qz_esp_restart();
         }
         else if (btn == BUTTON_B) {
-            // Отмена — возврат в меню
             return;
         }
         

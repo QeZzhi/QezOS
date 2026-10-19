@@ -1,14 +1,14 @@
-// ============================================================
-// bootloader.h — заголовок загрузчика QezOS
-// Здесь объявлена функция bootMenu.
-// bootloader.h — QezOS bootloader header
-// Declares the bootMenu function.
-// ============================================================
+#ifndef BOOTLOADER_H
+#define BOOTLOADER_H
 
-#pragma once // Включить этот файл только один раз | Include this file only once
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-// ------------------------------------------------------------
-// bootMenu — запустить меню загрузки
-// Показывает 3 режима загрузки QezOS
-// ------------------------------------------------------------
-void bootMenu(); // Меню загрузки | Boot menu
+void bootMenu(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

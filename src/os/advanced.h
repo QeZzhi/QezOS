@@ -1,14 +1,15 @@
-// ============================================================
-// advanced.h — заголовок расширенного меню QezOS
-// Здесь объявлена функция runAdvancedOptionsMenu.
-// advanced.h — advanced menu header of QezOS
-// Declares the runAdvancedOptionsMenu function.
-// ============================================================
+#ifndef ADVANCED_H
+#define ADVANCED_H
 
-#pragma once // Включить этот файл только один раз | Include this file only once
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-// ------------------------------------------------------------
-// runAdvancedOptionsMenu — запустить расширенное меню
-// Показывает список опций (Hardware Test, System Info, ...)
-// ------------------------------------------------------------
-void runAdvancedOptionsMenu(); // Запуск расширенного меню | Run advanced menu
+// Объявление функции меню продвинутых настроек
+void runAdvancedOptionsMenu(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // ADVANCED_H

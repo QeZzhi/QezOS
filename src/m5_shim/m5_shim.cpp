@@ -20,7 +20,6 @@ extern "C" void qz_m5_update(void) {
     M5.update();
 }
 
-// ОШИБКА ИСПРАВЛЕНА: теперь возвращает int, а не void
 extern "C" int qz_esp_getFreeHeap(void) {
     return ESP.getFreeHeap();
 }
@@ -46,7 +45,6 @@ extern "C" void qz_lcd_print(const char* text) {
     M5.Lcd.print(text);
 }
 
-// ОШИБКА ИСПРАВЛЕНА: название функции приведено к одному виду (set_text_color)
 extern "C" void qz_lcd_set_text_color(uint16_t color) {
     M5.Lcd.setTextColor(color);
 }
@@ -67,8 +65,6 @@ extern "C" void qz_lcd_fillScreen(uint16_t color) {
     M5.Lcd.fillScreen(color);
 }
 
-//     M5.Speaker.tone(1000, 200);
-
 extern "C" void qz_speaker_stop() {
     M5.Speaker.stop();
 }
@@ -80,7 +76,6 @@ extern "C" int qz_lcd_textWidth(const char* text) {
     return M5.Lcd.textWidth(text);
 }
 
-// ОШИБКА ИСПРАВЛЕНА: возвращает int, как обещано в .h
 extern "C" int qz_lcd_fontHeight(void) {
     return M5.Lcd.fontHeight();
 }

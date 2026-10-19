@@ -1,28 +1,14 @@
-// ============================================================
-// main.cpp — точка входа QezOS
-// Инициализирует M5StickS3 и запускает загрузчик.
-// main.cpp — QezOS entry point
-// Initializes M5StickS3 and starts the bootloader.
-// ============================================================
+#include <Arduino.h>
+#include "m5_shim/m5_shim.h"
+#include "boot/bootloader.h"
 
-#include <M5Unified.h>            // M5.config, M5.begin, M5.Lcd | M5.config, M5.begin, M5.Lcd
-#include "boot/bootloader.h"      // bootMenu | bootMenu
-
-// ------------------------------------------------------------
-// setup — вызывается один раз при запуске
-// Инициализирует M5, поворачивает экран, запускает загрузчик
-// ------------------------------------------------------------
-void setup() { // Инициализация | Initialization
-    auto cfg = M5.config(); // Конфигурация M5 по умолчанию | Default M5 config
-    M5.begin(cfg); // Инициализируем M5 (экран, кнопки, звук) | Initialize M5 (screen, buttons, sound)
-    M5.Lcd.setRotation(1); // Поворачиваем экран в альбомную ориентацию | Rotate screen to landscape
-    bootMenu(); // Запускаем меню загрузки | Start boot menu
+void setup() {
+    qz_m5_begin();       // Инициализация M5
+    qz_m5_set_rotation(1);  // Поворот экрана
+    bootMenu();          // Запуск твоего C-меню
 }
 
-// ------------------------------------------------------------
-// loop — вызывается в бесконечном цикле после setup
-// У QezOS вся логика в bootMenu, поэтому loop пустой
-// ------------------------------------------------------------
-void loop() { // Основной цикл | Main loop
-    delay(1000); // Пауза 1 сек (ничего не делаем) | 1 sec delay (do nothing)
+void loop() {
+    qz_m5_update();      // Обновление состояния (кнопки, питание)
+    delay(10);           // Небольшая пауза
 }

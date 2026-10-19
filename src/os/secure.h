@@ -1,14 +1,15 @@
-// ============================================================
-// secure.h — заголовок меню Secure Boot для QezOS
-// Здесь объявлена функция runSecureMenu.
-// secure.h — Secure Boot menu header for QezOS
-// Declares the runSecureMenu function.
-// ============================================================
+#ifndef SECURE_H
+#define SECURE_H
 
-#pragma once // Включить этот файл только один раз | Include this file only once
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-// ------------------------------------------------------------
-// runSecureMenu — запустить меню Secure Boot
-// Показывает список приложений (пока все — «None»)
-// ------------------------------------------------------------
-void runSecureMenu(); // Запуск меню Secure Boot | Run Secure Boot menu
+// Объявление функции безопасного меню
+void runSecureMenu(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // SECURE_H

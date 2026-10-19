@@ -1,28 +1,28 @@
-// ============================================================
-// display.h — заголовок для работы с дисплеем M5StickS3
-// Объявляет функции рисования меню, очистки, вывода текста.
-// display.h — display handling header for M5StickS3
-// Declares functions for drawing menus, clearing, printing text.
-// ============================================================
+#ifndef DISPLAY_H
+#define DISPLAY_H
 
-#pragma once // Включить этот файл только один раз | Include this file only once
-#include <M5Unified.h> // Нужен тип uint16_t и TFT_* | Need uint16_t type and TFT_*
+#include <stdint.h>
+#include "m5_shim/m5_shim.h" // Подключаем наш C-шим для работы с LCD
 
-// ------------------------------------------------------------
-// Функции для работы с дисплеем
-// ------------------------------------------------------------
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-// Нарисовать меню загрузчика | Draw bootloader menu
+// Очистка экрана
+void clear(void);
+
+// Вывод текста по центру (примерно)
+void printCentered(const char* text, uint16_t color);
+
+// Отрисовка главного меню загрузки (Boot Menu)
+// options - массив строк, selected - индекс выбранного, count - всего пунктов
 void drawBootMenu(const char* options[], int selected, int count);
 
-// Очистить экран | Clear screen
-void clear();
+// Отрисовка универсального меню (для Apps Menu)
+void drawGenericMenu(const char* title, const char* items[], int selected, int count);
 
-// Напечатать текст в позиции (x, y) | Print text at position (x, y)
-void printText(const char* text, int x, int y, uint16_t color);
+#ifdef __cplusplus
+}
+#endif
 
-// Нарисовать универсальное меню | Draw generic menu
-void drawGenericMenu(const char* title, const char* options[], int selected, int count);
-
-// Напечатать текст по центру экрана | Print centered text
-void printCentered(const char* text, uint16_t color);
+#endif // DISPLAY_H
