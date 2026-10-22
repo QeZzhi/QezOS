@@ -2,10 +2,21 @@
 #include "m5_shim/m5_shim.h"
 #include "boot/bootloader.h"
 
+#define POWER_HOLD_PIN 4  // Пин, который удерживает питание на StickC Plus 2
+
 void setup() {
-    qz_m5_begin();       // Инициализация M5
-    qz_m5_set_rotation(1);  // Поворот экрана
-    bootMenu();          // Запуск твоего C-меню
+    pinMode(POWER_HOLD_PIN, OUTPUT);
+    digitalWrite(POWER_HOLD_PIN, HIGH); // Сначала подаем питание
+    delay(100); // Даем плате время закрепиться
+    
+    qz_m5_begin();
+    
+    // ВАЖНО: Принудительно удерживаем питание
+    pinMode(POWER_HOLD_PIN, OUTPUT);
+    digitalWrite(POWER_HOLD_PIN, HIGH);
+    
+    qz_m5_set_rotation(3);
+    bootMenu();
 }
 
 void loop() {

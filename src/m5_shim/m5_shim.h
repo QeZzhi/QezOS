@@ -16,31 +16,38 @@
 extern "C" {
 #endif
 
-int qz_btn_a_wasPressed();
-int qz_btn_b_wasPressed();
-
+// База
 void qz_m5_begin(void);
 void qz_m5_update(void);
 void qz_m5_set_rotation(int rotation);
+void qz_delay(uint32_t ms);
+uint32_t qz_millis(void);
+int qz_esp_getFreeHeap(void);
+int qz_esp_getFlashChipSize(void);
+void qz_esp_restart(void);
 
+// Дисплей
+void qz_lcd_start_write(void);
+void qz_lcd_end_write(void);
+void qz_lcd_fillScreen(uint16_t color);
 void qz_lcd_set_text_color(uint16_t color);
 void qz_lcd_set_text_size(int size);
 void qz_lcd_set_cursor(int x, int y);
 void qz_lcd_print(const char* text);
 void qz_lcd_println(const char* text);  
-void qz_lcd_fillScreen(uint16_t color);
 void qz_lcd_printf(const char* format, ...);  
 int qz_lcd_textWidth(const char* text);
 int qz_lcd_fontHeight(void);          
 
+// Кнопки
+int qz_btn_a_wasPressed(void);
+int qz_btn_b_wasPressed(void);
+
+// Звук
 void qz_speaker_tone(int a, int b);
 void qz_speaker_stop();
-int qz_esp_getFreeHeap(void);               
+
 int qz_battery_level(void);
-void qz_esp_restart(void);
-int qz_esp_getFlashChipSize();
-void delay(uint32_t ms);
-uint32_t qz_millis(void);
 
 #ifdef __cplusplus
 }

@@ -25,23 +25,22 @@ void runHardwareTest() {
 }
 
 void testScreen() {
+    // Используем нашу функцию из шима (m5_shim.h), которая работает через M5Unified
+    qz_lcd_fillScreen(0xF800); // Красный
+    qz_delay(500);
     
-    fill_screen_fast(0xF800);
-    delay(500);
+    qz_lcd_fillScreen(0x07E0); // Зеленый
+    qz_delay(500);
     
-    fill_screen_fast(0x07E0);
-    delay(500);
+    qz_lcd_fillScreen(0x001F); // Синий
+    qz_delay(500);
     
-    fill_screen_fast(0x001F);
-    delay(500);
+    qz_lcd_fillScreen(0xFFFF); // Белый
+    qz_delay(500);
     
-    fill_screen_fast(0xFFFF);
-    delay(500);
-    
-    fill_screen_fast(0x0000);
-    delay(300);
+    qz_lcd_fillScreen(0x0000); // Черный
+    qz_delay(300);
 }
-
 void testButtons() {
     clear();
     qz_lcd_set_text_color(TFT_WHITE);

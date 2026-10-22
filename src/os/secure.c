@@ -18,10 +18,12 @@ void runSecureMenu(void) {
         
         int btn = getButtonPress();
         
-        if (btn == BUTTON_A) {
+        // Переключение вниз теперь на кнопке B
+        if (btn == BUTTON_B) {
             selected = (selected + 1) % count;
         } 
-        else if (btn == BUTTON_B) {
+        // Выбор теперь на кнопке A
+        else if (btn == BUTTON_A) {
             if (selected == 0) {
                 // Пункт "Check Integrity"
                 clear();

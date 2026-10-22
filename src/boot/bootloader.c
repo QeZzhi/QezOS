@@ -20,10 +20,12 @@ void bootMenu(void) {
         
         int btn = getButtonPress();
         
-        if (btn == BUTTON_A) {
+        // Переключение вниз теперь на кнопке B (маленькая, под экраном)
+        if (btn == BUTTON_B) {
             selected = (selected + 1) % count;
         } 
-        else if (btn == BUTTON_B) {
+        // Выбор теперь на кнопке A (большая, боковая)
+        else if (btn == BUTTON_A) {
             if (selected == 0) {
                 clear();
                 StandartBoot();
@@ -41,6 +43,7 @@ void bootMenu(void) {
                 qz_esp_restart();
             }
         }
-        delay(100);
+        // Заменил delay на qz_delay, чтобы не было конфликта с Arduino
+        qz_delay(100); 
     }
 }

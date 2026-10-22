@@ -14,12 +14,12 @@ void runStandartMenu(void) {
         
         int btn = getButtonPress();
         
-        if (btn == BUTTON_A) {
-            // Переключение вниз
+        // Переключение вниз теперь на кнопке B
+        if (btn == BUTTON_B) {
             selected = (selected + 1) % count;
         } 
-        else if (btn == BUTTON_B) {
-            // Выбор пункта
+        // Выбор теперь на кнопке A
+        else if (btn == BUTTON_A) {
             if (selected == 3) {
                 // "Back to Boot"
                 clear();
@@ -31,7 +31,7 @@ void runStandartMenu(void) {
                 qz_lcd_set_cursor(10, 50);
                 qz_lcd_println("Launching app...");
                 
-                delay(1000);
+                qz_delay(1000); // Заменил delay на qz_delay
                 clear();
                 printCentered("In development", TFT_YELLOW);
                 qz_delay(2000);
