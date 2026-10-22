@@ -4,17 +4,17 @@
 
 # QezOS 🚀
 
-**Дружелюбная прошивка для M5StickS3 (ESP32-S3), написанная на C.**
+**Дружелюбная прошивка для M5StickC Plus 2 (ESP32), написанная на C.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Platform: ESP32-S3](https://img.shields.io/badge/Platform-ESP32--S3-blue.svg)](https://www.espressif.com/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Platform: ESP32](https://img.shields.io/badge/Platform-ESP32-blue.svg)](https://www.espressif.com/)
 [![Language: C](https://img.shields.io/badge/Language-C-lightgrey.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
 
 ---
 
 ## 📖 О проекте
 
-**QezOS** — это моя попытка создать легковесную и быструю прошивку для M5StickS3. 
+**QezOS** — это моя попытка создать легковесную и быструю прошивку для M5StickC Plus 2. 
 
 **Главная цель проекта:** Сделать системное программирование и работу с железом **красивыми и понятными для новичков**. Я хочу показать, что писать под микроконтроллеры — это не страшно, а интересно.
 
@@ -26,14 +26,14 @@
 
 ## ✨ Цели и планы
 - [x] **Базовая инициализация:** Настройка платы и запуск основных модулей.
-- [ ] **Понятный интерфейс:** Создание красивого и интуитивного выбора режимов загрузки (Boot modes) при старте.
+- [x] **Понятный интерфейс:** Создание красивого и интуитивного выбора режимов загрузки (Boot modes) при старте.
 - [ ] **Максимально читаемый код:** Добавление подробных комментариев ко всем модулям.
 - [x] **Минимум магии:** Отказ от скрытых тяжелых HAL в пользу прямого контроля (достигнуто через изоляцию библиотеки в слой `m5_shim`).
 
 ## 🛠 Стек
 
 - **Язык:** C
-- **Платформа:** ESP32-S3 (M5StickS3)
+- **Платформа:** ESP32 (M5StickC Plus 2)
 - **Слой абстракции (Hardware):** C++ (M5Unified) — изолирован в `src/m5_shim`
 - **Сборка:** PlatformIO
 - **Фреймворк:** Arduino
@@ -44,7 +44,7 @@
 2. Клонируй репозиторий:
    `git clone https://github.com/QeZzhi/QezOS.git`
    `cd QezOS`
-3. Подключи M5StickS3 по USB.
+3. Подключи M5StickC Plus 2 по USB.
 4. Запусти сборку и прошивку:
    `pio run --target upload`
 
