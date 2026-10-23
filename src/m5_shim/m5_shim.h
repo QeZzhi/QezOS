@@ -26,7 +26,7 @@ int qz_esp_getFreeHeap(void);
 int qz_esp_getFlashChipSize(void);
 void qz_esp_restart(void);
 
-// Дисплей
+// Дисплей (прямой)
 void qz_lcd_start_write(void);
 void qz_lcd_end_write(void);
 void qz_lcd_fillScreen(uint16_t color);
@@ -36,19 +36,30 @@ void qz_lcd_set_cursor(int x, int y);
 void qz_lcd_print(const char* text);
 void qz_lcd_println(const char* text);  
 void qz_lcd_printf(const char* format, ...);  
-int qz_lcd_textWidth(const char* text);
-int qz_lcd_fontHeight(void);          
+
+// Canvas (Спрайты)
+void qz_canvas_init(void);
+void qz_canvas_clear(uint16_t color);
+void qz_canvas_set_text_color(uint16_t color);
+void qz_canvas_set_text_size(int size);
+void qz_canvas_set_cursor(int x, int y);
+void qz_canvas_print(const char* text);
+void qz_canvas_println(const char* text);
+void qz_canvas_push(void);
+void qz_canvas_draw_rect(int32_t x, int32_t y, int32_t w, int32_t h, uint16_t color);
 
 // Кнопки
 int qz_btn_a_wasPressed(void);
 int qz_btn_b_wasPressed(void);
-
+int qz_btn_a_wasLongPressed(void);
+int qz_btn_a_isPressed(void);
+int qz_btn_a_wasReleased(void);
 // Звук
 void qz_speaker_tone(int a, int b);
-void qz_speaker_stop();
+void qz_speaker_stop(void);
 
-int qz_battery_level(void);
-
+int qz_btn_a_isPressed(void);
+int qz_btn_a_wasReleased(void);
 #ifdef __cplusplus
 }
 #endif

@@ -13,19 +13,18 @@ void runSecureMenu(void) {
     int count = 3;
 
     while (1) {
-        // Рисуем меню (используем функцию из display.c)
-        drawGenericMenu("|-- Secure Boot --|", options, selected, count);
+        drawGenericMenu("Secure Boot", options, selected, count);
         
         int btn = getButtonPress();
         
-        // Переключение вниз теперь на кнопке B
-        if (btn == BUTTON_B) {
-            selected = (selected + 1) % count;
+        if (btn == BUTTON_B) { 
+            selected = (selected + 1) % count; // Вниз
         } 
-        // Выбор теперь на кнопке A
-        else if (btn == BUTTON_A) {
+        else if (btn == BUTTON_UP) {
+            selected = (selected - 1 + count) % count; // Вверх
+        }
+        else if (btn == BUTTON_A) { 
             if (selected == 0) {
-                // Пункт "Check Integrity"
                 clear();
                 qz_lcd_set_text_color(TFT_GREEN);
                 qz_lcd_set_cursor(10, 50);
@@ -37,7 +36,6 @@ void runSecureMenu(void) {
                 clear();
             } 
             else if (selected == 1) {
-                // Пункт "Lock Device"
                 clear();
                 qz_lcd_set_text_color(TFT_RED);
                 qz_lcd_set_cursor(10, 50);
@@ -46,11 +44,10 @@ void runSecureMenu(void) {
                 clear();
             } 
             else if (selected == 2) {
-                // Пункт "Back to Boot"
                 clear();
-                return; // Выход из функции
+                return; 
             }
         }
-        qz_delay(150); // Антидребезг
+        qz_delay(150); 
     }
 }

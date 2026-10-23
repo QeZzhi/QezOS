@@ -2,6 +2,9 @@
 #include "drivers/display.h"
 #include "drivers/buttons.h"
 #include "m5_shim/m5_shim.h"
+#include "utils/system_info.h"
+#include "utils/hardware_test.h"
+#include "utils/reset.h"
 
 void runAdvancedOptionsMenu(void) {
     const char* options[] = {
@@ -14,16 +17,17 @@ void runAdvancedOptionsMenu(void) {
     int count = 4;
 
     while (1) {
-        drawGenericMenu("|-- Advanced Options Boot--|", options, selected, count);
+        drawGenericMenu("Advanced Options", options, selected, count);
         
         int btn = getButtonPress();
         
-        // Переключение вниз теперь на кнопке B
-        if (btn == BUTTON_B) {
-            selected = (selected + 1) % count;
+        if (btn == BUTTON_B) { 
+            selected = (selected + 1) % count; // Вниз
         } 
-        // Выбор теперь на кнопке A
-        else if (btn == BUTTON_A) {
+        else if (btn == BUTTON_UP) {
+            selected = (selected - 1 + count) % count; // Вверх
+        }
+        else if (btn == BUTTON_A) { 
             if (selected == 0) {
                 clear();
                 showSystemInfo(); 

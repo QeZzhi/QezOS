@@ -9,35 +9,32 @@ void runStandartMenu(void) {
     int selected = 0;
 
     while (1) {
-        // Рисуем меню (используем универсальную функцию из display.c)
-        drawGenericMenu("|-----Apps Menu-----|", apps, selected, count);
+        drawGenericMenu("Apps Menu", apps, selected, count);
         
         int btn = getButtonPress();
         
-        // Переключение вниз теперь на кнопке B
-        if (btn == BUTTON_B) {
-            selected = (selected + 1) % count;
+        if (btn == BUTTON_B) { 
+            selected = (selected + 1) % count; // Вниз
         } 
-        // Выбор теперь на кнопке A
-        else if (btn == BUTTON_A) {
+        else if (btn == BUTTON_UP) {
+            selected = (selected - 1 + count) % count; // Вверх
+        }
+        else if (btn == BUTTON_A) { 
             if (selected == 3) {
-                // "Back to Boot"
                 clear();
-                return; // Выход из меню
+                return; // Выход в Boot Menu
             } else {
-                // Заглушка для остальных приложений
                 clear();
                 qz_lcd_set_text_color(TFT_YELLOW);
                 qz_lcd_set_cursor(10, 50);
                 qz_lcd_println("Launching app...");
-                
-                qz_delay(1000); // Заменил delay на qz_delay
+                qz_delay(1000);
                 clear();
                 printCentered("In development", TFT_YELLOW);
                 qz_delay(2000);
                 clear();
             }
         }
-        qz_delay(150); // Антидребезг
+        qz_delay(150); 
     }
 }
