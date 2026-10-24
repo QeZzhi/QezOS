@@ -38,6 +38,7 @@ void qz_lcd_println(const char* text);
 void qz_lcd_printf(const char* format, ...);  
 
 // Canvas (Спрайты)
+void qz_canvas_printf(const char* format, ...);
 void qz_canvas_init(void);
 void qz_canvas_clear(uint16_t color);
 void qz_canvas_set_text_color(uint16_t color);

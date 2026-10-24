@@ -5,6 +5,65 @@
 #include "os/os.h" 
 #include "m5_shim/m5_shim.h"
 
+void boot_splash(void) {
+    qz_canvas_clear(TFT_BLACK); 
+    
+    // --- Крупная надпись BOOTING ---
+    qz_canvas_set_text_color(TFT_CYAN);
+    qz_canvas_set_text_size(3); 
+    qz_canvas_set_cursor(40, 20); 
+    qz_canvas_println("BOOTING");
+    qz_canvas_draw_rect(0, 55, 240, 1, TFT_CYAN); 
+    qz_canvas_push();
+    qz_delay(800); 
+    
+    // --- Строки загрузки ---
+    qz_canvas_set_text_size(1); 
+    qz_canvas_set_cursor(10, 70); // Все строки будут начинаться с X=10
+    
+    // Строка 1
+    qz_canvas_set_text_color(TFT_WHITE);
+    qz_canvas_print("Init CPU..."); // Без пробела в начале
+    qz_canvas_set_text_color(TFT_GREEN);
+    qz_canvas_println("   [ OK ]"); // Добавили пробелы для отступа
+    qz_canvas_push(); 
+    qz_delay(500);    
+    
+    // Строка 2
+    qz_canvas_set_text_color(TFT_WHITE);
+    qz_canvas_print("Init Display...");
+    qz_canvas_set_text_color(TFT_GREEN);
+    qz_canvas_println("  [ OK ]");
+    qz_canvas_push();
+    qz_delay(500);
+    
+    // Строка 3
+    qz_canvas_set_text_color(TFT_WHITE);
+    qz_canvas_print("Mount FS...");
+    qz_canvas_set_text_color(TFT_GREEN);
+    qz_canvas_println("    [ OK ]");
+    qz_canvas_push();
+    qz_delay(500);
+    
+    // Строка 4
+    qz_canvas_set_text_color(TFT_WHITE);
+    qz_canvas_print("Start m5_shim...");
+    qz_canvas_set_text_color(TFT_GREEN);
+    qz_canvas_println(" [ OK ]");
+    qz_canvas_push();
+    qz_delay(500);
+    
+    // Финальная строка
+    qz_canvas_set_text_color(TFT_CYAN);
+    qz_canvas_set_cursor(10, 120);
+    qz_canvas_println("System Ready.");
+    qz_canvas_push();
+    qz_delay(1000);
+    
+    qz_canvas_clear(TFT_BLACK);
+    qz_canvas_push();
+}
+
 void bootMenu(void) {
     const char* options[] = {
         "Standart Boot",
@@ -21,10 +80,10 @@ void bootMenu(void) {
         int btn = getButtonPress();
         
         if (btn == BUTTON_B) { 
-            selected = (selected + 1) % count; // Вниз
+            selected = (selected + 1) % count; 
         } 
         else if (btn == BUTTON_UP) {
-            selected = (selected - 1 + count) % count; // Вверх
+            selected = (selected - 1 + count) % count; 
         }
         else if (btn == BUTTON_A) { 
             if (selected == 0) { clear(); StandartBoot(); } 

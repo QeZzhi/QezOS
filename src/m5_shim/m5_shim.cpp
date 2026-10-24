@@ -47,7 +47,15 @@ extern "C" void qz_canvas_set_cursor(int x, int y) { if (canvas_ready) canvas.se
 extern "C" void qz_canvas_print(const char* text) { if (canvas_ready && text) canvas.print(text); }
 extern "C" void qz_canvas_println(const char* text) { if (canvas_ready && text) canvas.println(text); }
 extern "C" void qz_canvas_push(void) { if (canvas_ready) canvas.pushSprite(0, 0); }
-
+extern "C" void qz_canvas_printf(const char* format, ...) {
+    if (!canvas_ready || !format) return;
+    va_list args;
+    va_start(args, format);
+    char buffer[256];
+    vsnprintf(buffer, sizeof(buffer), format, args);
+    va_end(args);
+    canvas.print(buffer);
+}
 // Кнопки
 extern "C" int qz_btn_a_wasPressed(void) { return M5.BtnA.wasPressed() ? 1 : 0; }
 extern "C" int qz_btn_b_wasPressed(void) { return M5.BtnB.wasPressed() ? 1 : 0; }

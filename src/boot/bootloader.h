@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 void bootMenu(void);
-
+void boot_splash(void);
 #ifdef __cplusplus
 }
 #endif

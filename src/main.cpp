@@ -13,7 +13,7 @@ void setup() {
     qz_m5_set_rotation(3);
     
     qz_canvas_init(); // Инициализируем Canvas после поворота
-    
+    boot_splash();
     bootMenu();
 }
 
