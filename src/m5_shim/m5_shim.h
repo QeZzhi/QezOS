@@ -48,7 +48,7 @@ void qz_canvas_print(const char* text);
 void qz_canvas_println(const char* text);
 void qz_canvas_push(void);
 void qz_canvas_draw_rect(int32_t x, int32_t y, int32_t w, int32_t h, uint16_t color);
-
+void qz_canvas_set_font_mono(void);
 // Кнопки
 int qz_btn_a_wasPressed(void);
 int qz_btn_b_wasPressed(void);

@@ -5,6 +5,7 @@
 #include "os/os.h" 
 #include "m5_shim/m5_shim.h"
 
+
 void boot_splash(void) {
     qz_canvas_clear(TFT_BLACK); 
     
@@ -17,48 +18,47 @@ void boot_splash(void) {
     qz_canvas_push();
     qz_delay(800); 
     
-    // --- Строки загрузки ---
     qz_canvas_set_text_size(1); 
-    qz_canvas_set_cursor(10, 70); // Все строки будут начинаться с X=10
     
-    // Строка 1
+    // --- Строка 1 ---
+    qz_canvas_set_cursor(20, 70); // X=20 для текста
     qz_canvas_set_text_color(TFT_WHITE);
-    qz_canvas_print("Init CPU..."); // Без пробела в начале
+    qz_canvas_print("Init CPU...");
+    qz_canvas_set_cursor(160, 70); // X=160 для [ OK ] (жестко)
     qz_canvas_set_text_color(TFT_GREEN);
-    qz_canvas_println("   [ OK ]"); // Добавили пробелы для отступа
+    qz_canvas_println("[ OK ]");
     qz_canvas_push(); 
     qz_delay(500);    
     
-    // Строка 2
+    // --- Строка 2 ---
+    qz_canvas_set_cursor(20, 85); 
     qz_canvas_set_text_color(TFT_WHITE);
     qz_canvas_print("Init Display...");
+    qz_canvas_set_cursor(160, 85); // X=160 для [ OK ]
     qz_canvas_set_text_color(TFT_GREEN);
-    qz_canvas_println("  [ OK ]");
+    qz_canvas_println("[ OK ]");
     qz_canvas_push();
     qz_delay(500);
     
-    // Строка 3
+    // --- Строка 3 ---
+    qz_canvas_set_cursor(20, 100); 
     qz_canvas_set_text_color(TFT_WHITE);
     qz_canvas_print("Mount FS...");
+    qz_canvas_set_cursor(160, 100); // X=160 для [ OK ]
     qz_canvas_set_text_color(TFT_GREEN);
-    qz_canvas_println("    [ OK ]");
+    qz_canvas_println("[ OK ]");
     qz_canvas_push();
     qz_delay(500);
     
-    // Строка 4
+    // --- Строка 4 ---
+    qz_canvas_set_cursor(20, 115); 
     qz_canvas_set_text_color(TFT_WHITE);
     qz_canvas_print("Start m5_shim...");
+    qz_canvas_set_cursor(160, 115); // X=160 для [ OK ]
     qz_canvas_set_text_color(TFT_GREEN);
-    qz_canvas_println(" [ OK ]");
+    qz_canvas_println("[ OK ]");
     qz_canvas_push();
     qz_delay(500);
-    
-    // Финальная строка
-    qz_canvas_set_text_color(TFT_CYAN);
-    qz_canvas_set_cursor(10, 120);
-    qz_canvas_println("System Ready.");
-    qz_canvas_push();
-    qz_delay(1000);
     
     qz_canvas_clear(TFT_BLACK);
     qz_canvas_push();

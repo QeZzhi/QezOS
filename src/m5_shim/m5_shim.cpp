@@ -40,6 +40,9 @@ extern "C" void qz_canvas_init(void) {
     canvas.setTextWrap(true);
     canvas_ready = true;
 }
+extern "C" void qz_canvas_set_font_mono(void) {
+    if (canvas_ready) canvas.setFont(&fonts::Font0); // Font0 — это моноширинный шрифт
+}
 extern "C" void qz_canvas_clear(uint16_t color) { if (canvas_ready) canvas.fillSprite(color); }
 extern "C" void qz_canvas_set_text_color(uint16_t color) { if (canvas_ready) canvas.setTextColor(color); }
 extern "C" void qz_canvas_set_text_size(int size) { if (canvas_ready) canvas.setTextSize(size); }
