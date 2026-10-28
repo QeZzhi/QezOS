@@ -2,6 +2,7 @@
   <img src="https://www.gitskins.com/api/section/wordmark?username=QeZzhi&theme=aurora&label=QezOS&v=2" width="100%" alt="QezOS Wordmark" />
 </p>
 
+[![XERJ Corpus Hub contributor](https://hub.xerj.org/contributors/QeZzhi/badge.svg)](https://hub.xerj.org/contributors/QeZzhi)
 # QezOS 🚀
 
 **Дружелюбная прошивка для M5StickC Plus 2 (ESP32), написанная на C.**
