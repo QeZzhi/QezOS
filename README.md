@@ -1,6 +1,6 @@
-<p align="center">
+<!-- <p align="center">
   <img src="https://www.gitskins.com/api/section/wordmark?username=QeZzhi&theme=aurora&label=QezOS&v=2" width="100%" alt="QezOS Wordmark" />
-</p>
+</p> -->
 
 [![XERJ Corpus Hub contributor](https://hub.xerj.org/contributors/QeZzhi/badge.svg)](https://hub.xerj.org/contributors/QeZzhi)
 # QezOS 🚀
